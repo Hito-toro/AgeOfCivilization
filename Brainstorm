@@ -1,0 +1,74 @@
+DEBUT => STATE NAME CITY
+
+MAP     => BATIMENTS    => MAISONS ( Capacite population, boost capacite par batiments et lvl )
+                        => FERME ( recolte food ) => construction sur farmland uniquement
+                        => SCIERIE ( recolte bois aux alentour et reforestation )
+                        => CARRIERE ( recolte pierre et minerais ) => construction sur mountain uniquement
+                        => FORGE ( production alliage et equipement/outils, vitesse de craft par lvl )
+                        => CASERNE ( entrainement soldats, temps d'entrainement ameliorer par lvl )
+                        => CITY HALL ( recherches de techno et gestion diplo, 1 par ville, a faire evoluer )
+                        => ENTREPOTS ( capacite max stockage, a faire evoluer )
+                        => PORT ( production d'unite de combat maritime et d'unite de convois marins, temps de production des unitées par lvl, 1 batiment par ville )
+                        => TEMPLE ( production de foi, amelioration du controle sur la population )
+                        => MUR ( bonus de protection, boost de protection par niveau du mur )
+                        => AEROPORT ( production d'unites volantes et d'unite de convois volantes, temps de production des unites par lvl, 1 batiment par ville necessaire pour decoller et atterir )
+
+        => DEPLACEMENTS => VILLAGEOIS ( pathfinding + action + inventaire )
+                        => TROUPES ( contenu du groupe + pathfinding + action + inventaire )
+                        => CONVOIS ( contenu du groupe + pathfinding + action + inventaire )
+
+        => DECOR        => RESSOURCES   =>  ARBRE
+
+                        => SOL ( solide ?, traversable ?, constructible ? )
+
+
+ENTITE  => PAISIBLE     =>  VILLAGEOIS  ( pathfinding + action + inventaire )
+                        =>  MARCHANTS   ( pathfinding + action + inventaire )
+                        =>  ANIMAUX     ( pathfinding )
+                        =>  VEHICULES   =>  CALECHES ( vitesse deplacement + pathfinding + contenu + inventaire )
+                                        =>  CARAVEL ( vitesse deplacement + pathfinding + contenu + inventaire )
+                                        =>  VOITURE ( vitesse deplacement + pathfinding + contenu + inventaire )
+                                        =>  CAMION ( vitesse deplacement + pathfinding + contenu + inventaire )
+                                        =>  AVION DE FRET ( vitesse deplacement + pathfinding + contenu + inventaire )
+                                        =>  GALERE DE FRET ( vitesse deplacement + pathfinding + contenu + inventaire )
+
+        => AGGRESSIF    =>  SOLDATS     =>  SOLDAT ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  LANCIER ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  ARCHER ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  ARMURE LOURDE ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  MOUSQUET ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  ARTILLERIE ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  ARBALETRIER ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  ASSASSIN ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  ESPION ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  COMMANDO ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  SNIPER ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  ROBOTS ( pathfinding + action + attaque + defense + vie + inventaire )
+                                        =>  CAVALIER ( pathfinding + action + attaque + defense + vie + inventaire )
+
+                        =>  VEHICULES   =>  CHARIOTS ( vitesse de deplacement + pathfinding + contenu + attaque + defense + vie + inventaire )
+                                        =>  TANK ( vitesse de deplacement + pathfinding + contenu + attaque + defense + vie + inventaire )
+                                        =>  AVION DE COMBAT ( vitesse de deplacement + pathfinding + contenu + attaque + defense + vie + inventaire )
+                                        =>  DRAKKAR ( vitesse de deplacement + pathfinding + contenu + attaque + defense + vie + inventaire )
+                                        =>  GALERE DE COMBAT ( vitesse de deplacement + pathfinding + contenu + attaque + defense + vie + inventaire )
+
+
+
+
+
+FloorType : grass, water, sand, mud, deep_water, stone, mountain, farmland, forest
+
+Tile < Block & Floor
+
+OBJECT // Séparer les objets de traitement de donnée, et les objets de rendering
+
+Render {
+    int[2] camera_pos = [x, y];
+}
+
+
+
+A prevoir => {
+    IDLE HORS LIGNE
+}
+
